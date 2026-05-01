@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://cg3ww5187pfj2"]
+
+[ext_resource type="Texture2D" uid="uid://cem2ynk02naj0" path="res://Numeros.png" id="1_1npir"]
+[ext_resource type="Script" uid="uid://bs8nex8f84xsi" path="res://hud_principal.gd" id="1_xmq7u"]
+[ext_resource type="Texture2D" uid="uid://dultemxy8ji5d" path="res://RelojVida1.png" id="2_xmq7u"]
+[ext_resource type="Texture2D" uid="uid://4vo3wrk43mem" path="res://SombreroVida.png" id="3_5ed2t"]
+[ext_resource type="Texture2D" uid="uid://cblhpsj0hnrqi" path="res://Player1.png" id="4_626r0"]
+[ext_resource type="Texture2D" uid="uid://b0qwb1a32evxk" path="res://High.png" id="5_4bkl0"]
+[ext_resource type="Texture2D" uid="uid://bg4ugnvksv0ne" path="res://CuchilloCocinaHUD2.png" id="5_5ed2t"]
+[ext_resource type="Texture2D" uid="uid://bn83cpssot3fc" path="res://CarritoSupermercadoHUD2.png" id="6_626r0"]
+[ext_resource type="Texture2D" uid="uid://wshegxdcn1r8" path="res://SartenHUD2.png" id="7_4bkl0"]
+
+[node name="HUD" type="CanvasLayer" unique_id=2115322534]
+script = ExtResource("1_xmq7u")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=827203304]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ContenedorPuntos" type="Node2D" parent="ColorRect" unique_id=937315651]
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect/ContenedorPuntos" unique_id=1150618105]
+texture_filter = 1
+position = Vector2(116, 24)
+texture = ExtResource("1_1npir")
+hframes = 10
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect/ContenedorPuntos" unique_id=1207980088]
+texture_filter = 1
+position = Vector2(127, 24)
+texture = ExtResource("1_1npir")
+hframes = 10
+
+[node name="Sprite2D3" type="Sprite2D" parent="ColorRect/ContenedorPuntos" unique_id=686849854]
+texture_filter = 1
+position = Vector2(138, 24)
+texture = ExtResource("1_1npir")
+hframes = 10
+
+[node name="Sprite2D4" type="Sprite2D" parent="ColorRect/ContenedorPuntos" unique_id=1722280116]
+texture_filter = 1
+position = Vector2(149, 24)
+texture = ExtResource("1_1npir")
+hframes = 10
+
+[node name="Sprite2D5" type="Sprite2D" parent="ColorRect/ContenedorPuntos" unique_id=205823095]
+texture_filter = 1
+position = Vector2(160, 24)
+texture = ExtResource("1_1npir")
+hframes = 10
+
+[node name="Sprite2D6" type="Sprite2D" parent="ColorRect/ContenedorPuntos" unique_id=1506915906]
+texture_filter = 1
+position = Vector2(171, 24)
+texture = ExtResource("1_1npir")
+hframes = 10
+
+[node name="ContenedorRelojes" type="GridContainer" parent="ColorRect" unique_id=257774406]
+layout_mode = 0
+offset_left = 184.0
+offset_right = 288.0
+offset_bottom = 46.0
+theme_override_constants/h_separation = -8
+theme_override_constants/v_separation = -1
+columns = 4
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ContenedorRelojes" unique_id=288109432]
+layout_mode = 2
+texture = ExtResource("2_xmq7u")
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect/ContenedorRelojes" unique_id=95199635]
+layout_mode = 2
+texture = ExtResource("2_xmq7u")
+
+[node name="TextureRect3" type="TextureRect" parent="ColorRect/ContenedorRelojes" unique_id=1857482898]
+layout_mode = 2
+texture = ExtResource("2_xmq7u")
+
+[node name="TextureRect4" type="TextureRect" parent="ColorRect/ContenedorRelojes" unique_id=1251409648]
+layout_mode = 2
+texture = ExtResource("2_xmq7u")
+
+[node name="TextureRect5" type="TextureRect" parent="ColorRect/ContenedorRelojes" unique_id=714112390]
+layout_mode = 2
+texture = ExtResource("2_xmq7u")
+
+[node name="TextureRect6" type="TextureRect" parent="ColorRect/ContenedorRelojes" unique_id=1657375756]
+layout_mode = 2
+texture = ExtResource("2_xmq7u")
+
+[node name="TextureRect7" type="TextureRect" parent="ColorRect/ContenedorRelojes" unique_id=1408648397]
+layout_mode = 2
+texture = ExtResource("2_xmq7u")
+
+[node name="TextureRect8" type="TextureRect" parent="ColorRect/ContenedorRelojes" unique_id=579268941]
+layout_mode = 2
+texture = ExtResource("2_xmq7u")
+
+[node name="ContenedorVidas" type="HBoxContainer" parent="ColorRect" unique_id=543295357]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 9.0
+offset_right = 42.0
+offset_bottom = 49.0
+theme_override_constants/separation = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ContenedorVidas" unique_id=951409177]
+layout_mode = 2
+texture = ExtResource("3_5ed2t")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect/ContenedorVidas" unique_id=8729237]
+layout_mode = 2
+texture = ExtResource("3_5ed2t")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="ColorRect/ContenedorVidas" unique_id=1804877790]
+layout_mode = 2
+texture = ExtResource("3_5ed2t")
+stretch_mode = 5
+
+[node name="IconoCuchillo" type="TextureRect" parent="ColorRect" unique_id=96150446]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 41.0
+offset_right = 36.0
+offset_bottom = 81.0
+texture = ExtResource("5_5ed2t")
+stretch_mode = 2
+
+[node name="IconoCarrito" type="TextureRect" parent="ColorRect" unique_id=1807082558]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 41.0
+offset_right = 61.0
+offset_bottom = 81.0
+texture = ExtResource("6_626r0")
+stretch_mode = 2
+
+[node name="IconoSarten" type="TextureRect" parent="ColorRect" unique_id=807673714]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 41.0
+offset_right = 82.0
+offset_bottom = 81.0
+texture = ExtResource("7_4bkl0")
+stretch_mode = 2
+
+[node name="Label_Player" type="TextureRect" parent="." unique_id=805534931]
+offset_top = 1.0
+offset_right = 96.0
+offset_bottom = 17.0
+texture = ExtResource("4_626r0")
+
+[node name="Label_Puntos" type="Label" parent="." unique_id=1840579918]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label_High" type="TextureRect" parent="." unique_id=1361853683]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_right = 40.0
+offset_bottom = 16.0
+grow_horizontal = 2
+texture = ExtResource("5_4bkl0")
+
+[node name="Label_Record" type="Label" parent="." unique_id=952495270]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TelonNegro" type="ColorRect" parent="." unique_id=868486017]
+offset_right = 288.0
+offset_bottom = 264.0
+color = Color(0, 0, 0, 1)

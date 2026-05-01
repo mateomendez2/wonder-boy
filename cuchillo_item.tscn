@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://5fvdg48tgk0q"]
+
+[ext_resource type="Script" uid="uid://bg05f70kjjt4p" path="res://cuchillo_item.gd" id="1_5hoyr"]
+[ext_resource type="Texture2D" uid="uid://crslgdecovv4o" path="res://CuchilloCocina.png" id="1_evhu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hoyr"]
+size = Vector2(16, 16)
+
+[node name="CuchilloItem" type="Area2D" unique_id=2016591391]
+script = ExtResource("1_5hoyr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1272831069]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_evhu4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1616057021]
+shape = SubResource("RectangleShape2D_5hoyr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

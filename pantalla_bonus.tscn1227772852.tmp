@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://dbuaadh6q2ioc"]
+
+[ext_resource type="Script" uid="uid://cbjtuer1n7l2c" path="res://pantalla_bonus.gd" id="1_l7ogy"]
+[ext_resource type="Texture2D" uid="uid://baocq212k6b6n" path="res://Bonus.png" id="1_tyol4"]
+[ext_resource type="Texture2D" uid="uid://bmsnj3ovkaibg" path="res://Dish.png" id="2_ootpl"]
+[ext_resource type="Texture2D" uid="uid://c4fmurg18xfvj" path="res://RoundBonus.png" id="3_o6ken"]
+[ext_resource type="Texture2D" uid="uid://d0g3ib8s07gmx" path="res://PlatoComidaVacío.png" id="3_vewgy"]
+[ext_resource type="Texture2D" uid="uid://de7kybck3xb20" path="res://PlatoComida.png" id="4_fol6a"]
+[ext_resource type="Texture2D" uid="uid://mfld2jta8mbv" path="res://NumerosResultado.png" id="5_lwvb0"]
+
+[node name="PantallaBonus" type="Control" unique_id=2035325725 node_paths=PackedStringArray("nodo_plato")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l7ogy")
+nodo_plato = NodePath("TextureRect5")
+imagen_color = ExtResource("4_fol6a")
+imagen_sombra = ExtResource("3_vewgy")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1851146411]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 264.0
+color = Color(0.9047312, 0.67913103, 0.5477083, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1910427310]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 19.0
+offset_right = 258.0
+offset_bottom = 59.0
+texture = ExtResource("1_tyol4")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=491005102]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 118.0
+offset_right = 257.0
+offset_bottom = 158.0
+texture = ExtResource("1_tyol4")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=646560160]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 118.0
+offset_right = 123.0
+offset_bottom = 158.0
+texture = ExtResource("2_ootpl")
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=1443371323]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 19.0
+offset_right = 156.0
+offset_bottom = 59.0
+texture = ExtResource("3_o6ken")
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="." unique_id=1714076623]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 158.0
+offset_right = 163.0
+offset_bottom = 206.0
+texture = ExtResource("4_fol6a")
+stretch_mode = 5
+
+[node name="ContadorRound" type="Node2D" parent="." unique_id=736897157]
+position = Vector2(139, 86)
+
+[node name="Digito1" type="Sprite2D" parent="ContadorRound" unique_id=1447326102]
+position = Vector2(-61, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("5_lwvb0")
+hframes = 10
+
+[node name="Digito2" type="Sprite2D" parent="ContadorRound" unique_id=1964548482]
+position = Vector2(-37, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("5_lwvb0")
+hframes = 10
+
+[node name="Digito3" type="Sprite2D" parent="ContadorRound" unique_id=588367839]
+position = Vector2(-13, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("5_lwvb0")
+hframes = 10
+
+[node name="Digito4" type="Sprite2D" parent="ContadorRound" unique_id=37840775]
+position = Vector2(11, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("5_lwvb0")
+hframes = 10
+
+[node name="Digito5" type="Sprite2D" parent="ContadorRound" unique_id=459466718]
+position = Vector2(35, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("5_lwvb0")
+hframes = 10
+
+[node name="Digito6" type="Sprite2D" parent="ContadorRound" unique_id=809740074]
+position = Vector2(59, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("5_lwvb0")
+hframes = 10
+
+[node name="Label" type="Label" parent="." unique_id=1735403251]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 221.0
+offset_right = 249.0
+offset_bottom = 244.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "PRESS ENTER TO CONTINUE"
+
+[node name="Timer" type="Timer" parent="Label" unique_id=170899798]
+wait_time = 0.5

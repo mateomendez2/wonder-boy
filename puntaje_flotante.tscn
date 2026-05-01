@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bfve8seydkd25"]
+
+[ext_resource type="Script" uid="uid://uy4iw1vjxipg" path="res://puntaje_flotante.gd" id="1_rauai"]
+
+[node name="PuntajeFlotante" type="Sprite2D" unique_id=1589096966]
+script = ExtResource("1_rauai")

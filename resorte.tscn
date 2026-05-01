@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d3fq8aee7w2ib"]
+
+[ext_resource type="Texture2D" uid="uid://byectt5co805h" path="res://Resorte1.png" id="1_astdl"]
+[ext_resource type="Script" uid="uid://c0opxelcdu38o" path="res://resorte.gd" id="1_hm16o"]
+[ext_resource type="Texture2D" uid="uid://cgybdyfcoc1n7" path="res://Resorte2.png" id="2_6tou8"]
+[ext_resource type="AudioStream" uid="uid://b7pow5e5nns3h" path="res://SonidoResorte.wav" id="4_6tou8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6pqd"]
+size = Vector2(48, 16)
+
+[node name="Resorte" type="Area2D" unique_id=2089503496]
+script = ExtResource("1_hm16o")
+fuerza_salto = -250.0
+imagen_estirado = ExtResource("2_6tou8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1783526894]
+texture = ExtResource("1_astdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2005677788]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_t6pqd")
+
+[node name="SonidoResorte" type="AudioStreamPlayer" parent="." unique_id=1082036972]
+stream = ExtResource("4_6tou8")
+pitch_scale = 1.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

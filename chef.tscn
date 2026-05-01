@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://njdm3nx2v2ha"]
+
+[ext_resource type="Texture2D" uid="uid://bdu76s1kgmw2p" path="res://WonderBoyCamina1.png" id="1_4weln"]
+[ext_resource type="Script" uid="uid://bsespwosevj54" path="res://chef.gd" id="1_suw86"]
+[ext_resource type="Texture2D" uid="uid://dx13tvpfa5qr3" path="res://WonderBoyCamina2.png" id="2_suw86"]
+[ext_resource type="PackedScene" uid="uid://dmua81rjmwp6i" path="res://efecto_humo_sarten.tscn" id="2_wmb27"]
+[ext_resource type="PackedScene" uid="uid://cbcaya41g1wfv" path="res://cuchillo_proyectil.tscn" id="3_ox73u"]
+[ext_resource type="Texture2D" uid="uid://cwf11ycep1ryh" path="res://WonderBoyCamina3.png" id="3_rgniv"]
+[ext_resource type="Texture2D" uid="uid://6307cd4ir64w" path="res://WonderBoyCamina5.png" id="4_c5ec0"]
+[ext_resource type="Texture2D" uid="uid://ljffnq1jirnv" path="res://CuchilloCocinaHUD1.png" id="4_n0s4d"]
+[ext_resource type="Texture2D" uid="uid://cqd1j113qxy3l" path="res://WonderBoyCamina4.png" id="5_85l5g"]
+[ext_resource type="Texture2D" uid="uid://bg4ugnvksv0ne" path="res://CuchilloCocinaHUD2.png" id="5_eymek"]
+[ext_resource type="Texture2D" uid="uid://dn0y4nkjho5ij" path="res://WonderBoyCamina6.png" id="6_4q8fo"]
+[ext_resource type="Texture2D" uid="uid://8y63iuiiwdsw" path="res://CarritoSupermercadoHUD1.png" id="6_sm2j6"]
+[ext_resource type="Texture2D" uid="uid://dfml8f63e07se" path="res://WonderBoyEstatico.png" id="7_f4cyl"]
+[ext_resource type="Texture2D" uid="uid://bn83cpssot3fc" path="res://CarritoSupermercadoHUD2.png" id="7_igjyy"]
+[ext_resource type="Texture2D" uid="uid://dgbs014u1tpr8" path="res://SartenHUD1.png" id="8_dt1di"]
+[ext_resource type="Texture2D" uid="uid://dsj12qrr2g7tx" path="res://WonderBoyPatina1.png" id="8_f4cyl"]
+[ext_resource type="Texture2D" uid="uid://c7gapm1i2i6ab" path="res://WonderBoyLanza.png" id="9_c5ec0"]
+[ext_resource type="Texture2D" uid="uid://8qfcs2o8nhfx" path="res://WonderBoyPatina2.png" id="9_khjhk"]
+[ext_resource type="Texture2D" uid="uid://wshegxdcn1r8" path="res://SartenHUD2.png" id="9_pgfb7"]
+[ext_resource type="Texture2D" uid="uid://be0oauyxw5h41" path="res://WonderBoySalta.png" id="9_rgniv"]
+[ext_resource type="Texture2D" uid="uid://cmcs2jww00pui" path="res://WonderBoyPatina3.png" id="10_1hf4q"]
+[ext_resource type="Texture2D" uid="uid://deexhi4qvtf7y" path="res://WonderBoyPatinayLanza.png" id="11_khjhk"]
+[ext_resource type="Texture2D" uid="uid://c6jwbnxsqh3wx" path="res://Sarten1.png" id="15_l4krl"]
+[ext_resource type="Texture2D" uid="uid://dhwsf5n4h8dsa" path="res://Sarten2.png" id="16_meet1"]
+[ext_resource type="Texture2D" uid="uid://bbqt4fncueqwd" path="res://Sarten3.png" id="17_wmb27"]
+[ext_resource type="Texture2D" uid="uid://ds3h7grdtqssh" path="res://Sarten4.png" id="18_ox73u"]
+[ext_resource type="AudioStream" uid="uid://dcxvlqath3ie5" path="res://SonidoSalto.wav" id="27_igjyy"]
+[ext_resource type="AudioStream" uid="uid://drsx06c8t5aa5" path="res://SonidoLanzamiento.wav" id="28_dt1di"]
+[ext_resource type="AudioStream" uid="uid://b5uvusrggbbop" path="res://SonidoCarrito.ogg" id="29_pgfb7"]
+[ext_resource type="AudioStream" uid="uid://brhxuwanly4qd" path="res://SonidoPoder.wav" id="30_lra7r"]
+[ext_resource type="AudioStream" uid="uid://cbdihlkid143y" path="res://SonidoDestruccionCarro.wav" id="31_rrt1r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khjhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4weln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_suw86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rgniv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_85l5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c5ec0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4q8fo")
+}],
+"loop": true,
+"name": &"Camina",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_f4cyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_khjhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1hf4q")
+}],
+"loop": true,
+"name": &"Carrito_Camina",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_f4cyl")
+}],
+"loop": true,
+"name": &"Carrito_Estatico",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_khjhk")
+}],
+"loop": false,
+"name": &"Carrito_Lanza",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1hf4q")
+}],
+"loop": true,
+"name": &"Carrito_Salta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_f4cyl")
+}],
+"loop": true,
+"name": &"Estatico",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_c5ec0")
+}],
+"loop": false,
+"name": &"Lanza",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_rgniv")
+}],
+"loop": true,
+"name": &"Salta",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgniv"]
+radius = 9.0
+height = 32.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0s4d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_l4krl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_meet1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wmb27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ox73u")
+}],
+"loop": true,
+"name": &"Orbita",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4krl"]
+size = Vector2(22, 18)
+
+[node name="Chef" type="CharacterBody2D" unique_id=620046591]
+script = ExtResource("1_suw86")
+escena_humo = ExtResource("2_wmb27")
+escena_proyectil = ExtResource("3_ox73u")
+img_cuchillo_prendido = ExtResource("4_n0s4d")
+img_cuchillo_apagado = ExtResource("5_eymek")
+img_carrito_prendido = ExtResource("6_sm2j6")
+img_carrito_apagado = ExtResource("7_igjyy")
+img_sarten_prendida = ExtResource("8_dt1di")
+img_sarten_apagada = ExtResource("9_pgfb7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=335871701]
+sprite_frames = SubResource("SpriteFrames_khjhk")
+animation = &"Carrito_Lanza"
+autoplay = "Estatico"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1927966433]
+shape = SubResource("CapsuleShape2D_rgniv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=980450678]
+top_level = true
+process_callback = 0
+limit_left = 0
+drag_top_margin = 1.0
+
+[node name="PuntoDisparo" type="Marker2D" parent="." unique_id=1453536876]
+position = Vector2(12, -3)
+
+[node name="PivoteSarten" type="Node2D" parent="." unique_id=142442910]
+
+[node name="SartenOrbital" type="Area2D" parent="PivoteSarten" unique_id=911234204]
+position = Vector2(0, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PivoteSarten/SartenOrbital" unique_id=278088722]
+sprite_frames = SubResource("SpriteFrames_n0s4d")
+animation = &"Orbita"
+frame = 1
+frame_progress = 0.6694827
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PivoteSarten/SartenOrbital" unique_id=2001840587]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_l4krl")
+
+[node name="SonidoSalto" type="AudioStreamPlayer" parent="." unique_id=544243841]
+stream = ExtResource("27_igjyy")
+volume_db = -10.0
+pitch_scale = 0.5
+
+[node name="SonidoLanzamiento" type="AudioStreamPlayer" parent="." unique_id=2002738375]
+stream = ExtResource("28_dt1di")
+volume_db = -10.0
+pitch_scale = 0.95
+bus = &"Lanzamiento"
+
+[node name="SonidoCarrito" type="AudioStreamPlayer" parent="." unique_id=97873555]
+stream = ExtResource("29_pgfb7")
+
+[node name="SonidoPoder" type="AudioStreamPlayer" parent="." unique_id=1272953213]
+stream = ExtResource("30_lra7r")
+
+[node name="SonidoDestruccionCarrito" type="AudioStreamPlayer" parent="." unique_id=1290995936]
+stream = ExtResource("31_rrt1r")

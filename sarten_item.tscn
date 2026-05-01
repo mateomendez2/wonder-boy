@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cw7j1lgrsbppn"]
+
+[ext_resource type="Texture2D" uid="uid://c6jwbnxsqh3wx" path="res://Sarten1.png" id="1_a665r"]
+[ext_resource type="Script" uid="uid://d0nmas76fy53u" path="res://sarten_item.gd" id="1_dj8cj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dj8cj"]
+size = Vector2(24, 20)
+
+[node name="Sarten_Item" type="Area2D" unique_id=1824543474]
+script = ExtResource("1_dj8cj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=407392975]
+texture = ExtResource("1_a665r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1676024576]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_dj8cj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

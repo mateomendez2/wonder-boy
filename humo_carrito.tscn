@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://yl34s813sf24"]
+
+[ext_resource type="Texture2D" uid="uid://c6axp7m5p3hpl" path="res://HumoCaldero.png" id="1_pupog"]
+[ext_resource type="Script" uid="uid://da6ntsgk3nclc" path="res://humo_carrito.gd" id="2_kghql"]
+
+[node name="HumoCarrito" type="Sprite2D" unique_id=2146874064]
+texture = ExtResource("1_pupog")
+script = ExtResource("2_kghql")

@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dmxonrwmwe1dp"]
+
+[ext_resource type="Script" uid="uid://b0647glglb8xw" path="res://enemigo_abeja.gd" id="1_tgl0u"]
+[ext_resource type="PackedScene" uid="uid://yl34s813sf24" path="res://humo_carrito.tscn" id="2_ndiji"]
+[ext_resource type="Texture2D" uid="uid://c6n6vfk18fb6q" path="res://EnemigoAbeja4.png" id="2_np0pu"]
+[ext_resource type="Texture2D" uid="uid://c2tl23kashv4l" path="res://EnemigoAbeja1.png" id="3_4mfe4"]
+[ext_resource type="PackedScene" uid="uid://bfve8seydkd25" path="res://puntaje_flotante.tscn" id="3_nvapa"]
+[ext_resource type="Texture2D" uid="uid://cm0gnrq6l5ymi" path="res://EnemigoAbeja2.png" id="4_gya46"]
+[ext_resource type="Texture2D" uid="uid://1wdox82lrpj8" path="res://Puntaje50Rojo.png" id="4_hamj2"]
+[ext_resource type="Texture2D" uid="uid://cgoamefjumwsf" path="res://EnemigoAbeja3.png" id="5_xfd2r"]
+[ext_resource type="AudioStream" uid="uid://bb4mt7v24s2ou" path="res://SonidoMuerteEnemigos.ogg" id="6_np0pu"]
+[ext_resource type="AudioStream" uid="uid://dwbql4xhuw4v0" path="res://SonidoDestruccion.wav" id="7_4mfe4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ndiji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_np0pu")
+}],
+"loop": true,
+"name": &"Cae",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4mfe4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gya46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xfd2r")
+}],
+"loop": true,
+"name": &"Vuela",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgl0u"]
+size = Vector2(29, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_np0pu"]
+size = Vector2(339, 58)
+
+[node name="EnemigoAbeja" type="Area2D" unique_id=1267706087]
+script = ExtResource("1_tgl0u")
+escena_humo = ExtResource("2_ndiji")
+escena_puntaje = ExtResource("3_nvapa")
+imagen_puntaje = ExtResource("4_hamj2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1826684767]
+sprite_frames = SubResource("SpriteFrames_ndiji")
+animation = &"Vuela"
+frame = 2
+frame_progress = 0.05847615
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=538572718]
+position = Vector2(2.5, 1)
+shape = SubResource("RectangleShape2D_tgl0u")
+
+[node name="Radar" type="Area2D" parent="." unique_id=428513353]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radar" unique_id=2093093661]
+position = Vector2(-150.5, 13)
+shape = SubResource("RectangleShape2D_np0pu")
+
+[node name="SonidoMuerte" type="AudioStreamPlayer" parent="." unique_id=2029569902]
+stream = ExtResource("6_np0pu")
+
+[node name="SonidoDestruccion" type="AudioStreamPlayer" parent="." unique_id=1193390297]
+stream = ExtResource("7_4mfe4")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Radar" to="." method="_on_radar_body_entered"]

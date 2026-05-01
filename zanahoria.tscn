@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bcfcgshw37pdi"]
+
+[ext_resource type="Script" uid="uid://bab8euij5rmwp" path="res://recolectable.gd" id="1_olwhb"]
+[ext_resource type="PackedScene" uid="uid://bfve8seydkd25" path="res://puntaje_flotante.tscn" id="2_2opan"]
+[ext_resource type="Texture2D" uid="uid://dweyno2uncdo6" path="res://Puntaje100.png" id="3_kv5qn"]
+[ext_resource type="Texture2D" uid="uid://mxlgkona1qhp" path="res://Zanahoria.png" id="4_olwhb"]
+[ext_resource type="AudioStream" uid="uid://dged3olrf7egc" path="res://SonidoRecoleccion.wav" id="5_2opan"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ltes"]
+size = Vector2(10, 15)
+
+[node name="Zanahoria" type="Area2D" unique_id=1428555933]
+script = ExtResource("1_olwhb")
+escena_puntaje = ExtResource("2_2opan")
+imagen_puntaje = ExtResource("3_kv5qn")
+puntos_que_da = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1059581442]
+texture = ExtResource("4_olwhb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087174030]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_2ltes")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2087730847]
+rect = Rect2(-7, -8, 14, 16)
+
+[node name="SonidoAgarre" type="AudioStreamPlayer" parent="." unique_id=398914693]
+stream = ExtResource("5_2opan")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

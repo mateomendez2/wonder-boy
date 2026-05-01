@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bnghgf87etty1"]
+
+[ext_resource type="Texture2D" uid="uid://cf723t2mlrlg1" path="res://Banana.png" id="1_mb6cj"]
+[ext_resource type="Script" uid="uid://bab8euij5rmwp" path="res://recolectable.gd" id="1_s1qo3"]
+[ext_resource type="PackedScene" uid="uid://bfve8seydkd25" path="res://puntaje_flotante.tscn" id="2_divbi"]
+[ext_resource type="Texture2D" uid="uid://b6rjpchawcwdi" path="res://Puntaje50.png" id="3_itruy"]
+[ext_resource type="AudioStream" uid="uid://dged3olrf7egc" path="res://SonidoRecoleccion.wav" id="5_itruy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ltes"]
+size = Vector2(17, 14)
+
+[node name="Banana" type="Area2D" unique_id=1428555933]
+script = ExtResource("1_s1qo3")
+escena_puntaje = ExtResource("2_divbi")
+imagen_puntaje = ExtResource("3_itruy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1059581442]
+texture = ExtResource("1_mb6cj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087174030]
+shape = SubResource("RectangleShape2D_2ltes")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2087730847]
+rect = Rect2(-9, -7, 17, 14)
+
+[node name="SonidoAgarre" type="AudioStreamPlayer" parent="." unique_id=766592872]
+stream = ExtResource("5_itruy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ck2gtt8xue5x4"]
+
+[ext_resource type="Texture2D" uid="uid://dvm7jvxaoieuh" path="res://CarritoCompras.png" id="1_g2ygp"]
+[ext_resource type="Script" uid="uid://bgxa7et7i5qug" path="res://carrito_item.gd" id="1_mdcdf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdcdf"]
+size = Vector2(27, 23)
+
+[node name="CarritoItem" type="Area2D" unique_id=1956542949]
+script = ExtResource("1_mdcdf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=702433822]
+texture = ExtResource("1_g2ygp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1095747009]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_mdcdf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

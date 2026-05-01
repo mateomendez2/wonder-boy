@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bxkdhtgc0ahhk"]
+
+[ext_resource type="Texture2D" uid="uid://3lfy3wqi60sm" path="res://Score.png" id="1_kaswv"]
+[ext_resource type="Script" uid="uid://b6jsa1711n5ol" path="res://pantalla_final.gd" id="1_sti78"]
+[ext_resource type="Texture2D" uid="uid://0rnowg7y1kjd" path="res://Total.png" id="2_5f37g"]
+[ext_resource type="Texture2D" uid="uid://cem2ynk02naj0" path="res://Numeros.png" id="3_5f37g"]
+
+[node name="PantallaFinal" type="Control" unique_id=655456929]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sti78")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=782356311]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.24334642, 0.44429675, 1)
+
+[node name="Label" type="Label" parent="." unique_id=85852936]
+modulate = Color(0.901428, 0.901428, 0.901428, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.8901515
+anchor_right = 0.5
+anchor_bottom = 0.8901515
+offset_left = -97.0
+offset_top = -23.0
+offset_right = 97.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "PRESS ENTER TO GO BACK"
+
+[node name="CartelScore" type="TextureRect" parent="." unique_id=253305184]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = 36.0
+offset_right = 47.0
+offset_bottom = 76.0
+grow_horizontal = 2
+texture = ExtResource("1_kaswv")
+stretch_mode = 5
+
+[node name="CartelTotal" type="TextureRect" parent="." unique_id=587452250]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 82.0
+offset_right = 191.0
+offset_bottom = 122.0
+texture = ExtResource("2_5f37g")
+stretch_mode = 5
+
+[node name="NumerosTotal" type="Node2D" parent="." unique_id=7667669]
+position = Vector2(-144, 112)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="NumerosTotal" unique_id=1140742389]
+texture_filter = 1
+position = Vector2(116, 24)
+texture = ExtResource("3_5f37g")
+hframes = 10
+
+[node name="Sprite2D2" type="Sprite2D" parent="NumerosTotal" unique_id=1120941771]
+texture_filter = 1
+position = Vector2(127, 24)
+texture = ExtResource("3_5f37g")
+hframes = 10
+
+[node name="Sprite2D3" type="Sprite2D" parent="NumerosTotal" unique_id=765280769]
+texture_filter = 1
+position = Vector2(138, 24)
+texture = ExtResource("3_5f37g")
+hframes = 10
+
+[node name="Sprite2D4" type="Sprite2D" parent="NumerosTotal" unique_id=842358802]
+texture_filter = 1
+position = Vector2(149, 24)
+texture = ExtResource("3_5f37g")
+hframes = 10
+
+[node name="Sprite2D5" type="Sprite2D" parent="NumerosTotal" unique_id=909730997]
+texture_filter = 1
+position = Vector2(160, 24)
+texture = ExtResource("3_5f37g")
+hframes = 10
+
+[node name="Sprite2D6" type="Sprite2D" parent="NumerosTotal" unique_id=913960993]
+texture_filter = 1
+position = Vector2(171, 24)
+texture = ExtResource("3_5f37g")
+hframes = 10

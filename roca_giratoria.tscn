@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dwtsddmn8pwpl"]
+
+[ext_resource type="Script" uid="uid://bbwkxqocdv6rb" path="res://roca_giratoria.gd" id="1_l0ygb"]
+[ext_resource type="Texture2D" uid="uid://d0i2n12rn0nfj" path="res://RocaGiratoria.png" id="1_ogxjh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vph76"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0ygb"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ogxjh"]
+radius = 20.024984
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0ygb"]
+size = Vector2(293, 193)
+
+[node name="RocaGiratoria" type="RigidBody2D" unique_id=233820037]
+physics_material_override = SubResource("PhysicsMaterial_vph76")
+gravity_scale = 0.0
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_l0ygb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=976243398]
+texture = ExtResource("1_ogxjh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=51677104]
+shape = SubResource("CircleShape2D_l0ygb")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1019289247]
+rect = Rect2(-17, -17, 34, 34)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=239660169]
+
+[node name="CircleShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1468850173]
+shape = SubResource("CircleShape2D_ogxjh")
+
+[node name="Radar" type="Area2D" parent="." unique_id=438654092]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radar" unique_id=996444359]
+position = Vector2(-136.5, 77.5)
+shape = SubResource("RectangleShape2D_l0ygb")
+debug_color = Color(0.8231371, 0.39055064, 0.2445611, 0.41960785)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_entered" from="Radar" to="." method="_on_radar_body_entered"]

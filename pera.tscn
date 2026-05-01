@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d35jkl3bil8l3"]
+
+[ext_resource type="Script" uid="uid://bab8euij5rmwp" path="res://recolectable.gd" id="1_23ab6"]
+[ext_resource type="PackedScene" uid="uid://bfve8seydkd25" path="res://puntaje_flotante.tscn" id="2_0ackn"]
+[ext_resource type="Texture2D" uid="uid://bi1av7ohdhx3x" path="res://Puntaje200.png" id="3_23ab6"]
+[ext_resource type="Texture2D" uid="uid://xjyak7pbxb1y" path="res://Pera.png" id="4_23ab6"]
+[ext_resource type="AudioStream" uid="uid://dged3olrf7egc" path="res://SonidoRecoleccion.wav" id="5_0ackn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ltes"]
+size = Vector2(10, 15)
+
+[node name="Pera" type="Area2D" unique_id=1428555933]
+script = ExtResource("1_23ab6")
+escena_puntaje = ExtResource("2_0ackn")
+imagen_puntaje = ExtResource("3_23ab6")
+puntos_que_da = 200
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1059581442]
+texture = ExtResource("4_23ab6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087174030]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_2ltes")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2087730847]
+rect = Rect2(-7, -8, 14, 16)
+
+[node name="SonidoAgarre" type="AudioStreamPlayer" parent="." unique_id=403281398]
+stream = ExtResource("5_0ackn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

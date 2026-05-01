@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://baqhhj407sjav"]
+
+[ext_resource type="Script" uid="uid://drpk01ygf03m2" path="res://roca.gd" id="1_h375u"]
+[ext_resource type="Texture2D" uid="uid://e06ltthkewqh" path="res://Roca.png" id="2_hew7i"]
+[ext_resource type="PackedScene" uid="uid://yl34s813sf24" path="res://humo_carrito.tscn" id="2_nbtsl"]
+[ext_resource type="PackedScene" uid="uid://bfve8seydkd25" path="res://puntaje_flotante.tscn" id="3_21leu"]
+[ext_resource type="Texture2D" uid="uid://1wdox82lrpj8" path="res://Puntaje50Rojo.png" id="4_oip72"]
+[ext_resource type="AudioStream" uid="uid://dwbql4xhuw4v0" path="res://SonidoDestruccion.wav" id="6_oip72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h375u"]
+size = Vector2(16.772968, 43.627216)
+
+[node name="Roca" type="Area2D" unique_id=2010905218]
+script = ExtResource("1_h375u")
+escena_humo = ExtResource("2_nbtsl")
+escena_puntaje = ExtResource("3_21leu")
+imagen_puntaje = ExtResource("4_oip72")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=291672492]
+texture = ExtResource("2_hew7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1887407873]
+position = Vector2(0.251742, 5.5000005)
+rotation = -1.5707963
+scale = Vector2(1.1457078, -0.5877674)
+shape = SubResource("RectangleShape2D_h375u")
+
+[node name="SonidoDestruccion" type="AudioStreamPlayer" parent="." unique_id=1741614386]
+stream = ExtResource("6_oip72")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dqk1ywufrvpjw"]
+
+[ext_resource type="Texture2D" uid="uid://de7kybck3xb20" path="res://PlatoComida.png" id="1_m0uc8"]
+[ext_resource type="Script" uid="uid://k8v0tskeasoq" path="res://plato_comida.gd" id="1_qnbnx"]
+[ext_resource type="PackedScene" uid="uid://bfve8seydkd25" path="res://puntaje_flotante.tscn" id="2_kpj6p"]
+[ext_resource type="Texture2D" uid="uid://bkfl71bp3k26i" path="res://Puntaje1000.png" id="2_vfcy7"]
+[ext_resource type="AudioStream" uid="uid://dged3olrf7egc" path="res://SonidoRecoleccion.wav" id="5_kpj6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oiard"]
+size = Vector2(24, 20)
+
+[node name="PlatoComida" type="Area2D" unique_id=2124593237]
+script = ExtResource("1_qnbnx")
+escena_puntaje = ExtResource("2_kpj6p")
+imagen_puntaje = ExtResource("2_vfcy7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=150303806]
+texture = ExtResource("1_m0uc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1705612625]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_oiard")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=510064808]
+rect = Rect2(-16, -12, 32, 28)
+
+[node name="SonidoAgarre" type="AudioStreamPlayer" parent="." unique_id=1527431264]
+stream = ExtResource("5_kpj6p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

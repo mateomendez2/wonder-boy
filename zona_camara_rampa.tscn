@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cvmltv0ld4o3y"]
+
+[ext_resource type="Script" uid="uid://c3348o1nhwnjx" path="res://zona_camara_rampa.gd" id="1_qwqrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kl4fw"]
+size = Vector2(1160, 352)
+
+[node name="ZonaCamaraRampa" type="Area2D" unique_id=1300365069]
+script = ExtResource("1_qwqrq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1789270191]
+position = Vector2(572, -144)
+shape = SubResource("RectangleShape2D_kl4fw")
+
+[node name="PuntoInicio" type="Marker2D" parent="." unique_id=1210241843]
+position = Vector2(-8, 32)
+
+[node name="PuntoFin" type="Marker2D" parent="." unique_id=79853568]
+position = Vector2(1152, -256)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

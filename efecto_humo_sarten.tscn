@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dmua81rjmwp6i"]
+
+[ext_resource type="Script" uid="uid://dlacmm4qbk75u" path="res://efecto_humo_sarten.gd" id="1_3i5o5"]
+[ext_resource type="Texture2D" uid="uid://c6axp7m5p3hpl" path="res://HumoCaldero.png" id="2_sexh4"]
+
+[node name="EfectoHumoSarten" type="Node2D" unique_id=801373819]
+script = ExtResource("1_3i5o5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1517463604]
+texture = ExtResource("2_sexh4")

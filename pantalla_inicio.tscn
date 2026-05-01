@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://8punwglsmf1w"]
+
+[ext_resource type="Texture2D" uid="uid://chh65yl44b2b7" path="res://PortadaChef.png" id="1_70vh5"]
+[ext_resource type="Script" uid="uid://c6qhnpjb2tp4e" path="res://pantalla_inicio.gd" id="1_deuh0"]
+[ext_resource type="Texture2D" uid="uid://r2lfx37u73r2" path="res://WONDERBOY.png" id="3_5alke"]
+[ext_resource type="AudioStream" uid="uid://baxlrhwcv422x" path="res://SonidoEmpieza.wav" id="4_s0td0"]
+
+[node name="PantallaInicio" type="Control" unique_id=331965218]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_deuh0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1713091330]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 264.0
+color = Color(0.74067557, 0.91987526, 0.99166423, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1964835527]
+layout_mode = 0
+offset_left = -31.0
+offset_top = 6.0
+offset_right = 353.0
+offset_bottom = 222.0
+texture = ExtResource("1_70vh5")
+
+[node name="LabelStart" type="Label" parent="." unique_id=977947555]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 238.0
+offset_right = 229.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "PRESS ENTER TO START"
+
+[node name="Timer" type="Timer" parent="LabelStart" unique_id=1642687506]
+wait_time = 0.5
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=854893983]
+layout_mode = 0
+offset_left = -39.0
+offset_top = 123.0
+offset_right = 651.0
+offset_bottom = 379.0
+texture = ExtResource("3_5alke")
+stretch_mode = 5
+
+[node name="SonidoStart" type="AudioStreamPlayer" parent="." unique_id=780448566]
+stream = ExtResource("4_s0td0")
+pitch_scale = 1.3
+
+[connection signal="timeout" from="LabelStart/Timer" to="." method="_on_timer_timeout"]

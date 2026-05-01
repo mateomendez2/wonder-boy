@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://mke4bhx7hr77"]
+
+[ext_resource type="Texture2D" uid="uid://cd5fcoum3s86p" path="res://Araña3.png" id="1_723cy"]
+[ext_resource type="Script" uid="uid://bljayk6iiwabs" path="res://enemigo_arana.gd" id="1_o2na6"]
+[ext_resource type="PackedScene" uid="uid://yl34s813sf24" path="res://humo_carrito.tscn" id="2_4w42h"]
+[ext_resource type="Texture2D" uid="uid://bgsn7burl0cpy" path="res://Araña1.png" id="2_kuyyi"]
+[ext_resource type="PackedScene" uid="uid://bfve8seydkd25" path="res://puntaje_flotante.tscn" id="3_gdqhk"]
+[ext_resource type="Texture2D" uid="uid://dudub4a6uyl74" path="res://Araña2.png" id="3_xh3kv"]
+[ext_resource type="Texture2D" uid="uid://1wdox82lrpj8" path="res://Puntaje50Rojo.png" id="4_rllmj"]
+[ext_resource type="AudioStream" uid="uid://bb4mt7v24s2ou" path="res://SonidoMuerteEnemigos.ogg" id="8_4w42h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udwv8"]
+size = Vector2(28, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_672dc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_723cy")
+}],
+"loop": true,
+"name": &"Morir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kuyyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xh3kv")
+}],
+"loop": true,
+"name": &"Moverse",
+"speed": 5.0
+}]
+
+[node name="EnemigoArana" type="Area2D" unique_id=424130258]
+script = ExtResource("1_o2na6")
+escena_humo = ExtResource("2_4w42h")
+escena_puntaje = ExtResource("3_gdqhk")
+imagen_puntaje = ExtResource("4_rllmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=16221965]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_udwv8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=780335874]
+sprite_frames = SubResource("SpriteFrames_672dc")
+animation = &"Moverse"
+frame = 1
+frame_progress = 0.33723694
+
+[node name="SonidoMuerte" type="AudioStreamPlayer" parent="." unique_id=1342129746]
+stream = ExtResource("8_4w42h")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

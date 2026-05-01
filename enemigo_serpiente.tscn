@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://01wjdjc625od"]
+
+[ext_resource type="Script" uid="uid://d0r04bnlvj4ff" path="res://enemigo_serpiente.gd" id="1_g77lv"]
+[ext_resource type="Texture2D" uid="uid://c52bejxj670wm" path="res://EnemigoSerpiente4.png" id="1_tfflr"]
+[ext_resource type="PackedScene" uid="uid://dmua81rjmwp6i" path="res://efecto_humo_sarten.tscn" id="2_2fx3d"]
+[ext_resource type="Texture2D" uid="uid://dararcbgay3te" path="res://EnemigoSerpiente1.png" id="2_g77lv"]
+[ext_resource type="Texture2D" uid="uid://j5wod3bfi8ri" path="res://EnemigoSerpiente2.png" id="3_2fx3d"]
+[ext_resource type="PackedScene" uid="uid://bfve8seydkd25" path="res://puntaje_flotante.tscn" id="3_wuuej"]
+[ext_resource type="Texture2D" uid="uid://b3aw34bv0lo2d" path="res://EnemigoSerpiente3.png" id="4_wuuej"]
+[ext_resource type="Texture2D" uid="uid://1wdox82lrpj8" path="res://Puntaje50Rojo.png" id="4_yoert"]
+[ext_resource type="AudioStream" uid="uid://bb4mt7v24s2ou" path="res://SonidoMuerteEnemigos.ogg" id="9_ggkhi"]
+[ext_resource type="AudioStream" uid="uid://dwbql4xhuw4v0" path="res://SonidoDestruccion.wav" id="10_4f0sc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yoert"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tfflr")
+}],
+"loop": true,
+"name": &"Muerto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g77lv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2fx3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wuuej")
+}],
+"loop": true,
+"name": &"Quieto",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggkhi"]
+size = Vector2(27, 31)
+
+[node name="EnemigoSerpiente" type="Area2D" unique_id=1144787299]
+script = ExtResource("1_g77lv")
+escena_humo = ExtResource("2_2fx3d")
+escena_puntaje = ExtResource("3_wuuej")
+imagen_puntaje = ExtResource("4_yoert")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1297056512]
+sprite_frames = SubResource("SpriteFrames_yoert")
+animation = &"Quieto"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2113926014]
+position = Vector2(-1.5, 0.5)
+shape = SubResource("RectangleShape2D_ggkhi")
+
+[node name="SonidoMuerte" type="AudioStreamPlayer" parent="." unique_id=1628162530]
+stream = ExtResource("9_ggkhi")
+
+[node name="SonidoDestruccion" type="AudioStreamPlayer" parent="." unique_id=721321741]
+stream = ExtResource("10_4f0sc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

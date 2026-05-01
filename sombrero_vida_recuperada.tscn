@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bii7vrvj3koly"]
+
+[ext_resource type="Texture2D" uid="uid://ocwi5y1bikr1" path="res://SombreroVidaRecuperada.png" id="1_26ntk"]
+[ext_resource type="Script" uid="uid://iqqidaxubkuh" path="res://sombrero_vida_recuperada.gd" id="1_dwhby"]
+[ext_resource type="AudioStream" uid="uid://brhxuwanly4qd" path="res://SonidoPoder.wav" id="3_4ch17"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwhby"]
+size = Vector2(17, 15)
+
+[node name="SombreroVidaRecuperada" type="Area2D" unique_id=1479054544]
+script = ExtResource("1_dwhby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=417506343]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_dwhby")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=130776025]
+position = Vector2(6, 0)
+texture = ExtResource("1_26ntk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=90617539]
+rect = Rect2(-10, -11, 20, 18)
+
+[node name="SonidoPoder" type="AudioStreamPlayer" parent="." unique_id=504279652]
+stream = ExtResource("3_4ch17")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

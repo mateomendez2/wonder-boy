@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dl2ww1x0flrxy"]
+
+[ext_resource type="Texture2D" uid="uid://525r0iv3n1cq" path="res://PlataformaPasto.png" id="1_2ohk7"]
+[ext_resource type="Script" uid="uid://dvvctdgmobi88" path="res://plataforma_movil.gd" id="1_rbb1a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rbb1a"]
+radius = 15.0
+height = 96.0
+
+[node name="PlataformaMovil" type="AnimatableBody2D" unique_id=1076682567]
+script = ExtResource("1_rbb1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2034763887]
+texture = ExtResource("1_2ohk7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1024266479]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_rbb1a")

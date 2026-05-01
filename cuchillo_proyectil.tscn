@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cbcaya41g1wfv"]
+
+[ext_resource type="Texture2D" uid="uid://crslgdecovv4o" path="res://CuchilloCocina.png" id="1_3fnda"]
+[ext_resource type="Script" uid="uid://vbullaf4r3e8" path="res://cuchillo_proyectil.gd" id="1_t0s5y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0s5y"]
+size = Vector2(16, 16)
+
+[node name="CuchilloProyectil" type="RigidBody2D" unique_id=207397173 groups=["armas"]]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_t0s5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1514490897]
+position = Vector2(2.3841858e-07, 2.3841858e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_3fnda")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2088660734]
+shape = SubResource("RectangleShape2D_t0s5y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
