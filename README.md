@@ -8,18 +8,18 @@ Este proyecto consiste en la recreación técnica y artística de dos niveles cl
 ## 🎮 Controles
 *   **Moverse:**
     - Avanzar:
-        # Teclado: Tecla → / Tecla D.
-        # Mando: Flecha → / Palanca hacia la derecha.
+        | Teclado: Tecla → / Tecla D.
+        | Mando: Flecha → / Palanca hacia la derecha.
     - Retroceder:
-        # Teclado: Tecla ← / Tecla A.
-        # Mando: Flecha ← / Palanca hacia la izquierda.
+        | Teclado: Tecla ← / Tecla A.
+        | Mando: Flecha ← / Palanca hacia la izquierda.
     - Saltar:
-        # Teclado: Tecla ↑ / Tecla W / Barra espaciadora.
-        # Mando: Flecha ↑ / Botón X (PlayStation).
+        | Teclado: Tecla ↑ / Tecla W / Barra espaciadora.
+        | Mando: Flecha ↑ / Botón X (PlayStation).
         
 *   **Lanzar cuchillo:**
-        # Teclado: Tecla Z / Tecla K.
-        # Mando: Botón ▢ (PlayStation) / Botón R2 (PlayStation).
+        | Teclado: Tecla Z / Tecla K.
+        | Mando: Botón ▢ (PlayStation) / Botón R2 (PlayStation).
 
 ## 🚀 Cómo jugar
 Podés probar la versión web directamente aquí: 
